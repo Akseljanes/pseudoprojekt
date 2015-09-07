@@ -1,1 +1,1 @@
-tere maailm tere la
+tere maailm tere lad
