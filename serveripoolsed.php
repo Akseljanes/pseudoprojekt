@@ -1,5 +1,7 @@
 <?php
 $nimi="Aksel";
 $perenimi="Jänes";
-echo $nimi." ".$perenimi;
+$vanus=20;
+
+echo $nimi." ".$perenimi. " (" .$vanus. ")";
 ?>
