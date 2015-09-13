@@ -14,6 +14,7 @@
 <button value="blue">Blue</button>
 <button value="green">Green</button>
 <button id="klick">Luba parem klõps</button>
+<button id="delete">Kaota pilt / Too tagasi</button>
 <script>
     function asendamine(){
         $("#KassiPilt").attr("src","http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg");
@@ -37,6 +38,9 @@
             return klick;
         });
     })
+    $("#delete").click(function(){
+        $("img").toggle();
+    });
 </script>
 </body>
 </html>
