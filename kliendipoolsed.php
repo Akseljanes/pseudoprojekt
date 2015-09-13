@@ -2,7 +2,7 @@
 <html lang="et">
 <head>
     <meta charset="UTF-8">
-    <title>Kliendipoolsed</title>
+    <title>kliendipoolsed</title>
 </head>
 <body>
 
