@@ -9,6 +9,9 @@ $summa=$arv1+$arv2;
 
 echo $isik->{'eesnimi'}." ".$isik->{'perenimi'}." (".$isik->{'vanus'}.") ".$isik->{'sugu'}."<br>";
 echo "Arvude ".$arv1." ja ".$arv2." summa on ".$summa."<br>";
+if(isset($_GET['koer'])){
+    echo $_GET['koer']."<br>";
+};
 if($eesnimi_algab_vokaaliga){
     echo "Nimi algab vokaaliga";
 }
