@@ -16,16 +16,21 @@
 <script>
     function asendamine(){
         $("#KassiPilt").attr("src","http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg");
-        }
+    }
     function tereMaailm(){
         alert('Tere, Maailm!');
     }
     function alertKHK(){
         alert('Tere, Maailm!');
         window.location="http://www.khk.ee";
-        }
+    }
     $("button").click(function(){
         $("body").css("background-color",$(this).val());
+    })
+    $(document).ready(function(){
+        $(document).on("contextmenu",function(){
+            return false;
+        });
     })
 </script>
 </body>
