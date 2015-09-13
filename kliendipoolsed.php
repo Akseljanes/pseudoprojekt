@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Kliendipoolsed</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
 <button onclick="tereMaailm()">Tere Maailm</button>
@@ -11,9 +12,9 @@
 <img id="KassiPilt" onclick="asendamine()" width="250" height="250" src="http://www.cats.org.uk/uploads/images/pages/photo_latest14.jpg">
 
 <script>
-    document.addEventListener("click",function(){
-        document.getElementById("KassiPilt").src="http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg";
-    });
+    function asendamine(){
+        $("#KassiPilt").attr("src","http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg");
+        }
     function tereMaailm(){
         alert('Tere, Maailm!');
     }
