@@ -13,6 +13,7 @@
 <button value="red">Red</button>
 <button value="blue">Blue</button>
 <button value="green">Green</button>
+<button id="klick">Luba parem klõps</button>
 <script>
     function asendamine(){
         $("#KassiPilt").attr("src","http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg");
@@ -27,9 +28,13 @@
     $("button").click(function(){
         $("body").css("background-color",$(this).val());
     })
+    var klick=false;
+    $("#klick").bind("click",function() {
+        return klick = true;
+    });
     $(document).ready(function(){
         $(document).on("contextmenu",function(){
-            return false;
+            return klick;
         });
     })
 </script>
