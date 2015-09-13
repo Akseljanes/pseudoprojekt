@@ -12,7 +12,14 @@ echo "Arvude ".$arv1." ja ".$arv2." summa on ".$summa."<br>";
 if(isset($_GET['koer'])){
     echo $_GET['koer']."<br>";
 };
-if($eesnimi_algab_vokaaliga){
-    echo "Nimi algab vokaaliga";
+
+if(isset($_POST['kass'])){
+    echo 'Kass on: '.$_POST['kass'].'<br>';
 }
+if($eesnimi_algab_vokaaliga){
+    echo "Nimi algab vokaaliga";}
 ?>
+<form action="?" method="post">
+    <input name="kass" placeholder="Kassitõug">
+    <input type="submit">
+</form>
