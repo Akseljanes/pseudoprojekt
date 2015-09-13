@@ -10,9 +10,9 @@
 <a href="javascript:alertKHK()">Tere Maailm</a>
 <a href="http://www.khk.ee" onclick="alert('Jääme siia!');return false;">Jääme siia</a><br>
 <img id="KassiPilt" onclick="asendamine()" width="250" height="250" src="http://www.cats.org.uk/uploads/images/pages/photo_latest14.jpg">
-<button onclick="backgroundx('red')">Red</button>
-<button onclick="backgroundx('green')">Red</button>
-<button onclick="backgroundx('blue')">Red</button>
+<button value="red">Red</button>
+<button value="blue">Blue</button>
+<button value="green">Green</button>
 <script>
     function asendamine(){
         $("#KassiPilt").attr("src","http://www.myperfectpetfood.com/assets/img/nav-menu/nav1.jpg");
@@ -24,9 +24,9 @@
         alert('Tere, Maailm!');
         window.location="http://www.khk.ee";
         }
-    function backgroundx(color) {
-        document.body.style.background = color;
-    }
+    $("button").click(function(){
+        $("body").css("background-color",$(this).val());
+    })
 </script>
 </body>
 </html>
