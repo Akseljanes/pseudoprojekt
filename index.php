@@ -1,18 +1,9 @@
 <?php
-$servername="localhost";
-$username="root";
-$password="";
-$dbname="blog";
-$conn = new mysqli($servername, $username, $password,$dbname);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
-$sql= "SELECT * FROM POSTS JOIN AUTHORS";
-$result=$conn->query($sql);
-if(mysqli_num_rows($result)>0){
-            while($row=mysqli_fetch_assoc($result)){
-                        $posts[]=$row;
-                    }
+$db = mysqli_connect('localhost', 'root', 'root', 'cleanblog');
+mysqli_query($db, "SET NAMES 'utf8'");
+$q = mysqli_query($db, "SELECT * FROM posts NATURAL JOIN authors");
+while ($row = mysqli_fetch_assoc($q)) {
+    $posts[] = $row;
 }
 ?>
 <!DOCTYPE html>
@@ -115,15 +106,15 @@ if(mysqli_num_rows($result)>0){
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                            <?=$post['title']?>
+                            <?=$post['post_title']?>
                         </h2>
 
                         <h3 class="post-subtitle">
-                            <?=$post['description']?>
+                            <?=$post['post_description']?>
                         </h3>
                     </a>
 
-                    <p class="post-meta">Posted by <a href="#"><?=$post['name']?></a> on <?=$post['date']?></p>
+                    <p class="post-meta">Posted by <a href="#"><?=$post['author_name']?></a> on <?=$post['post_created']?></p>
                 </div>
                 <hr>
             </div>
