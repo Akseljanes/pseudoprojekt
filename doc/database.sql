@@ -26,7 +26,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `$posts`
 --
 
-CREATE TABLE IF NOT EXISTS `posts` (
+CREATE TABLE IF NOT EXISTS `$posts` (
   `post_id` int(10) unsigned NOT NULL,
   `title` varchar(80) NOT NULL,
   `description` varchar(120) NOT NULL,
