@@ -2,7 +2,7 @@
 require 'config.php';
 $db = mysqli_connect(DATABASE_HOSTNAME, DATABASE_USERNAME, DATABASE_PASSWORD, DATABASE_DATABASE);
 mysqli_query($db, "SET NAMES 'utf8'");
-$q = mysqli_query($db, "SELECT * FROM posts NATURAL JOIN authors") or die(mysqli_error($result));
+$q = mysqli_query($db, "SELECT * FROM posts NATURAL JOIN authors") or die(mysqli_error($q));
 while ($row = mysqli_fetch_assoc($q)) {
     $posts[] = $row;
 }
