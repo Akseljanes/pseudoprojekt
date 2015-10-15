@@ -101,7 +101,8 @@ while ($row = mysqli_fetch_assoc($q)) {
 
 <!-- Main Content -->
 <div class="container">
-    <?php foreach ('posts' as $post): ?>
+    <?php foreach ($posts as $post): ?>
+        var_dump();
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-preview">
