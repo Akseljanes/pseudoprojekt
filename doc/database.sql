@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS `posts` (
 -- Dumping data for table `$posts`
 --
 
-INSERT INTO `$posts` (`post_id`, `title`, `description`, `author_id`, `date`, `content`) VALUES
+INSERT INTO `posts` (`post_id`, `title`, `description`, `author_id`, `date`, `content`) VALUES
 (1, 'Man must explore, and this is exploration at its greatest', 'Problems look mighty small from 150 miles up', 1, '2014-08-24 00:00:00', ''),
 (2, 'lalalalala', 'llalalalalalalal', 1, '2014-08-24 00:00:00', '');
 
@@ -68,7 +68,7 @@ INSERT INTO `authors` (`authors_id`, `name`) VALUES
 --
 -- Indexes for table `$posts`
 --
-ALTER TABLE `$posts`
+ALTER TABLE `posts`
   ADD PRIMARY KEY (`post_id`);
 
 --
@@ -84,7 +84,7 @@ ALTER TABLE `authors`
 --
 -- AUTO_INCREMENT for table `$posts`
 --
-ALTER TABLE `$posts`
+ALTER TABLE `posts`
   MODIFY `post_id` int(10) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `authors`
