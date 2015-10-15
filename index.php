@@ -107,15 +107,15 @@ while ($row = mysqli_fetch_assoc($q)) {
                 <div class="post-preview">
                     <a href="post.html">
                         <h2 class="post-title">
-                            <?=$post['post_title']?>
+                            <?=$post['title']?>
                         </h2>
 
                         <h3 class="post-subtitle">
-                            <?=$post['post_description']?>
+                            <?=$post['description']?>
                         </h3>
                     </a>
 
-                    <p class="post-meta">Posted by <a href="#"><?=$post['author_name']?></a> on <?=$post['post_created']?></p>
+                    <p class="post-meta">Posted by <a href="#"><?=$post['author_id']?></a> on <?=$post['post_created']?></p>
                 </div>
                 <hr>
             </div>
