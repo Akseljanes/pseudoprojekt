@@ -5,6 +5,15 @@
  * Date: 19/10/15
  * Time: 09:06
  */
+if(isset($_GET['emailvalidation'])){
+    $mail=$_GET['emailvalidation'];
+    if(checkdnsrr(array_pop(explode("@",$mail)),"MX")){
+        exit("Email domain is correct.");
+    }
+    else{
+        exit("There is no domain like that.");
+    }
+}
     $filename="data.csv";
     if(file_exists($filename)){
             $file=fopen($filename,"r");

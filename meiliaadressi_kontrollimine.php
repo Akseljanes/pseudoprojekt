@@ -1,6 +1,7 @@
-
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 <input type="text" id="mail" placeholder="mail@mail.com" onkeypress="Javascript: if (event.keyCode==13) EmailCheck();"/>
 <input type="submit"  name="check" onclick="Javascript:Emailcheck();"/>
+<div id="result"></div>
 <script type="text/javascript">
     function Emailcheck(){
         var mail = document.getElementById('mail');
@@ -10,7 +11,9 @@
             return false;
         }
         else{
-            alert('Email is correct');
+            $.get('api.php',{emailvalidation:mail.value},function(data){
+                $('#result').text(data);
+            });
             return true;
         }
     }
