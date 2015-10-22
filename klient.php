@@ -16,7 +16,7 @@
             <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,'tabel',this.parentNode.cellIndex);"/></th>
             <th><input placeholder="Otsi" onkeyup="Javascript:filter(this,'tabel',this.parentNode.cellIndex);"/></th>
         </tr>
-    </table>
+    </table>xˇ
 <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.js"></script>
 <script type="text/javascript">
     $.get("api.php",function(data){
