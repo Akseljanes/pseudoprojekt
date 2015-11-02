@@ -27,25 +27,35 @@
 <table id="ilmaTabel"></table>
 <script type="text/javascript">
     $(".chosen").chosen({width:"25%"});
-    $.get("http://cors.io/?u=http://openweathermap.org/help/city_list.txt", function (data) {
-        var dataString = data.split("\n");
-        result = [];
-        var headers = dataString[0].split("\t");
-        for (var i = 1; i < dataString.length - 1; i++) {
-            var obj = {};
-            var currentline = dataString[i].split("\t");
-            for(var j=0;j<headers.length;j++){
-                obj[headers[j]] = currentline[j];
+    if(localStorage&&localStorage.getItem('linnad')){
+        chosenAndtabel(JSON.parse(localStorage.getItem('linnad')));
+    }
+    else{
+        $.get("http://cors.io/?u=http://openweathermap.org/help/city_list.txt",function(data){
+            var dataString = data.split("\n");
+            var result = [];
+            var headers = dataString[0].split("\t");
+            for (var i = 1; i < dataString.length - 1; i++) {
+                var obj = {};
+                var currentline = dataString[i].split("\t");
+                for(var j=0;j<headers.length;j++){
+                    obj[headers[j]] = currentline[j];
+                }
+                //*Sorteerida Eesti riigi järgi
+                if(obj.countryCode=="EE"){
+                    result.push(obj);
+                }
+                /*
+                 result.push(obj);
+                 */
             }
-            //*Sorteerida Eesti riigi järgi
-            if(obj.countryCode=="EE"){
-                result.push(obj);
+            if (localStorage){
+                localStorage.setItem('linnad',JSON.stringify(result));
             }
-            /*
-             result.push(obj);
-             */
-        }
-        console.log(result);
+            chosenAndtabel(result);
+        });
+    }
+    function chosenAndtabel(result){
         $.each(result, function (index, item) {
             $('#ilmateade-dropdown').append(
                     $('<option></option>').val(item["nm"]).text(item["nm"])
@@ -57,7 +67,7 @@
                 $('#ilmaTabel').append('<tr><td>'+ data.name.toString() +'</td><td>'+data.weather[0].description.toString().toLocaleLowerCase()+'</td></tr>');
             });
         }
-    });
+    }
     function getWeather() {
         var inputField = document.getElementById('ilmateade-dropdown');
         var inputVal = inputField.value;
